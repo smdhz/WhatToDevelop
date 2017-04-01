@@ -1,0 +1,27 @@
+﻿<controls:MetroWindow x:Class="WTD.Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:WhatToDevelop.View;assembly=WhatToDevelop"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:chrome="http://schemes.grabacr.net/winfx/2014/chrome"
+        xmlns:controls="http://schemes.grabacr.net/winfx/2014/controls"
+        Background="{DynamicResource ThemeBrushKey}"
+        Foreground="{DynamicResource ActiveForegroundBrushKey}"
+        WindowState="{Binding WindowState}" Loaded="MetroWindow_Loaded"
+        Title="MainWindow" Height="372" Width="611">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Rectangle Height="4" DockPanel.Dock="Bottom"/>
+            <Path Width="22" Height="22" Margin="10,5" Stretch="Uniform" Fill="{DynamicResource ForegroundBrushKey}" Data="F1 M 0.119995,18.54C 0.0399933,18.29 0,18.0625 0,17.8575C 0,17.5625 0.0849915,17.33 0.25499,17.16L 10.035,7.38751C 10,7.10254 9.98248,6.8125 9.98248,6.51752C 9.98248,6.04755 10.0375,5.57001 10.1475,5.08502C 10.3025,4.33502 10.505,3.83502 10.755,3.58502L 13.9725,0.375C 14.1725,0.140015 14.485,0.0150146 14.91,0C 15.265,0 15.7025,0.0875244 16.2225,0.262512C 17.3275,0.652527 18.3575,1.32251 19.3125,2.27252C 20.2975,3.25751 20.985,4.3125 21.375,5.4375C 21.545,5.95251 21.63,6.38251 21.63,6.72754C 21.63,7.13251 21.515,7.42999 21.285,7.62L 18,10.875C 17.75,11.125 17.2575,11.3375 16.5225,11.5125C 16.0725,11.6025 15.5975,11.6475 15.0975,11.6475C 14.7975,11.6475 14.5075,11.6325 14.2275,11.6025L 4.4325,21.3975C 4.25749,21.5725 4.03749,21.6525 3.77249,21.6375C 3.57249,21.6375 3.34749,21.5975 3.09749,21.5175C 2.48749,21.3125 1.89249,20.9225 1.3125,20.3475C 0.702484,19.7675 0.304993,19.165 0.119995,18.54 Z M 7.88249,11.625C 7.88249,11.89 7.97,12.11 8.14499,12.285C 8.345,12.485 8.57748,12.5925 8.8425,12.6075C 9.2175,12.6075 9.63998,12.39 10.11,11.955C 10.425,11.64 10.61,11.295 10.665,10.92C 10.72,10.545 10.6337,10.2488 10.4063,10.0313C 10.1787,9.81378 9.88124,9.73627 9.51373,9.79877C 9.14624,9.86127 8.79749,10.0475 8.4675,10.3575C 8.07748,10.7475 7.88249,11.17 7.88249,11.625 Z M 14.7525,1.44C 14.6725,1.44 14.6175,1.45129 14.5875,1.47375C 14.5575,1.49628 14.5425,1.55499 14.5425,1.65002C 14.5425,1.76001 14.565,1.92255 14.61,2.13751C 14.69,2.52753 14.89,3.0163 15.21,3.60376C 15.53,4.19128 15.9325,4.72754 16.4175,5.21252C 16.8725,5.66254 17.4037,6.04755 18.0112,6.36749C 18.6187,6.6875 19.11,6.88751 19.485,6.96753C 19.705,7.01251 19.87,7.03503 19.98,7.03503C 20.075,7.03503 20.1375,7.02002 20.1675,6.98999L 20.19,6.8775C 20.19,6.76752 20.1675,6.59503 20.1225,6.36005C 20.0275,5.97003 19.8125,5.48126 19.4775,4.8938C 19.1425,4.30627 18.7475,3.78754 18.2925,3.33752C 17.8075,2.85254 17.2687,2.4538 16.6762,2.1413C 16.0837,1.8288 15.6075,1.61749 15.2475,1.50751C 15.0275,1.4425 14.8625,1.42004 14.7525,1.44 Z "/>
+            <controls:SystemButtons DockPanel.Dock="Right" VerticalAlignment="Top"/>
+            <TextBlock Foreground="{DynamicResource ForegroundBrushKey}" FontSize="14.667" VerticalAlignment="Center">What to develop 测试平台</TextBlock>
+        </DockPanel>
+            <!-- 测试控件 -->
+        <v:MainPanel Grid.Row="1" Name="panel"/>
+    </Grid>
+</controls:MetroWindow>

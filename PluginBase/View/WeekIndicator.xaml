@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="WhatToDevelop.View.WeekIndicator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="10" d:DesignWidth="200">
+    <UserControl.Resources>
+        <Style x:Key="Available" TargetType="Rectangle">
+            <Setter Property="StrokeThickness" Value="1"/>
+            <Setter Property="Stroke" Value="#80FFFFFF"/>
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="DarkGray" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Tomorrow" TargetType="Rectangle">
+            <Setter Property="StrokeThickness" Value="1"/>
+            <Setter Property="Stroke" Value="#80FFFFFF"/>
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="LimeGreen" Offset="0"/>
+                        <GradientStop Color="Green" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Today" TargetType="Rectangle">
+            <Setter Property="StrokeThickness" Value="1"/>
+            <Setter Property="Stroke" Value="#80FFFFFF"/>
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Gold" Offset="0"/>
+                        <GradientStop Color="DarkGoldenrod" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Fail" TargetType="Rectangle">
+            <Setter Property="StrokeThickness" Value="1"/>
+            <Setter Property="Stroke" Value="#10FFFFFF"/>
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Transparent" Offset="0"/>
+                        <GradientStop Color="#80000000" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Opacity="0.8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Name="rec0"/>
+        <Rectangle Name="rec1" Grid.Column="1"/>
+        <Rectangle Name="rec2" Grid.Column="2"/>
+        <Rectangle Name="rec3" Grid.Column="3"/>
+        <Rectangle Name="rec4" Grid.Column="4"/>
+        <Rectangle Name="rec5" Grid.Column="5"/>
+        <Rectangle Name="rec6" Grid.Column="6"/>
+    </Grid>
+</UserControl>

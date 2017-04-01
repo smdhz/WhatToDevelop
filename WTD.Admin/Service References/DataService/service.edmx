@@ -1,0 +1,73 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="3.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="Skyline.Common.Models" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="AnimeInfo">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Title" Type="Edm.String" />
+        <Property Name="First" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Weekday" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Keyword" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="ShipLog">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Time" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Area" Type="Edm.String" />
+        <Property Name="Enemy" Type="Edm.String" />
+        <Property Name="Rank" Type="Edm.String" />
+        <Property Name="Drop" Type="Edm.String" />
+        <Property Name="Fight" Type="Edm.Guid" />
+      </EntityType>
+      <EntityType Name="ItemInfo">
+        <Key>
+          <PropertyRef Name="Name" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+        <Property Name="Type" Type="Edm.String" />
+        <Property Name="Icon" Type="Edm.String" />
+        <NavigationProperty Name="ItemNo2Info" Relationship="Skyline.Common.Models.Skyline_Common_Models_ItemInfo_ItemNo2Info_Skyline_Common_Models_ItemNo2Info_ItemNo2InfoPartner" ToRole="ItemNo2Info" FromRole="ItemNo2InfoPartner" />
+      </EntityType>
+      <EntityType Name="ItemNo2Info">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Item" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Weekdays" Type="Edm.String" />
+        <Property Name="Target" Type="Edm.String" />
+        <Property Name="Cost" Type="Edm.String" />
+        <NavigationProperty Name="ItemInfo" Relationship="Skyline.Common.Models.Skyline_Common_Models_ItemNo2Info_ItemInfo_Skyline_Common_Models_ItemInfo_ItemInfoPartner" ToRole="ItemInfo" FromRole="ItemInfoPartner" />
+      </EntityType>
+      <Association Name="Skyline_Common_Models_ItemInfo_ItemNo2Info_Skyline_Common_Models_ItemNo2Info_ItemNo2InfoPartner">
+        <End Type="Skyline.Common.Models.ItemNo2Info" Role="ItemNo2Info" Multiplicity="*" />
+        <End Type="Skyline.Common.Models.ItemInfo" Role="ItemNo2InfoPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Skyline_Common_Models_ItemNo2Info_ItemInfo_Skyline_Common_Models_ItemInfo_ItemInfoPartner">
+        <End Type="Skyline.Common.Models.ItemInfo" Role="ItemInfo" Multiplicity="0..1" />
+        <End Type="Skyline.Common.Models.ItemNo2Info" Role="ItemInfoPartner" Multiplicity="0..1" />
+      </Association>
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityContainer Name="Container" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="AnimeInfoes" EntityType="Skyline.Common.Models.AnimeInfo" />
+        <EntitySet Name="ShipLogs" EntityType="Skyline.Common.Models.ShipLog" />
+        <EntitySet Name="ItemInfoes" EntityType="Skyline.Common.Models.ItemInfo" />
+        <EntitySet Name="ItemNo2Infoes" EntityType="Skyline.Common.Models.ItemNo2Info" />
+        <AssociationSet Name="Skyline_Common_Models_ItemInfo_ItemNo2Info_Skyline_Common_Models_ItemNo2Info_ItemNo2InfoPartnerSet" Association="Skyline.Common.Models.Skyline_Common_Models_ItemInfo_ItemNo2Info_Skyline_Common_Models_ItemNo2Info_ItemNo2InfoPartner">
+          <End Role="ItemNo2InfoPartner" EntitySet="ItemInfoes" />
+          <End Role="ItemNo2Info" EntitySet="ItemNo2Infoes" />
+        </AssociationSet>
+        <AssociationSet Name="Skyline_Common_Models_ItemNo2Info_ItemInfo_Skyline_Common_Models_ItemInfo_ItemInfoPartnerSet" Association="Skyline.Common.Models.Skyline_Common_Models_ItemNo2Info_ItemInfo_Skyline_Common_Models_ItemInfo_ItemInfoPartner">
+          <End Role="ItemInfoPartner" EntitySet="ItemNo2Infoes" />
+          <End Role="ItemInfo" EntitySet="ItemInfoes" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
